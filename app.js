@@ -42,23 +42,7 @@ fetch('https://api.github.com/users/MartianYernar')
   })
   .catch(() => {});
 
-// hero marquee
 const CL = window.CLUSTERS || [];
-const byKey = {}; CL.forEach(c => byKey[c.key] = c);
-const heroPics = ['images/hero-avatar.jpg','images/hero-soilyget.jpg','images/hero-smartgarbage.jpg','images/hero-heartcare.jpg'];
-['avatar','ftc','info26','nishack','itfest','scup','mentees','intern','wro'].forEach(k => {
-  if (byKey[k] && byKey[k].images[0]) heroPics.push(byKey[k].images[0].src);
-});
-const uniq = [...new Set(heroPics)];
-const colA = uniq.filter((_, i) => i % 2 === 0), colB = uniq.filter((_, i) => i % 2 === 1);
-function buildCol(list) {
-  const col = document.createElement('div'); col.className = 'mq-col';
-  const track = document.createElement('div'); track.className = 'mq-track';
-  list.concat(list).forEach(src => { const img = document.createElement('img'); img.src = src; img.loading = 'lazy'; img.alt = ''; track.appendChild(img); });
-  col.appendChild(track); return col;
-}
-const mq = document.getElementById('heroMarquee');
-mq.appendChild(buildCol(colA)); mq.appendChild(buildCol(colB));
 
 // evidence gallery
 function card(src, cap, cls) {
