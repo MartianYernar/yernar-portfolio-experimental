@@ -10,14 +10,17 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Archivo+Black&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Archivo+Black&family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="cursor-ring" id="cursorRing"></div>
 <div class="cursor-dot" id="cursorDot"></div>
 
-<header class="nav" id="nav">
+<div class="glow glow-a" aria-hidden="true"></div>
+<div class="glow glow-b" aria-hidden="true"></div>
+
+<header class="nav splash-nav" id="nav">
   <a href="#top" class="brand">YERNAR<span>°</span></a>
   <nav class="nav-links" id="navlinks">
     <a href="#identity">Identity</a>
@@ -25,47 +28,74 @@
     <a href="#experience">Experience</a>
     <a href="#evidence">Evidence</a>
     <a href="#press">Press</a>
-    <a href="cv.pdf" target="_blank" class="nav-cv">CV ↗</a>
   </nav>
+  <div class="nav-right">
+    <span class="stat-pill">🏅 3 medals &nbsp;·&nbsp; 610K KZT</span>
+    <a href="cv.pdf" target="_blank" class="nav-cv">CV ↗</a>
+  </div>
   <button class="burger" id="burger" aria-label="Menu">☰</button>
 </header>
 
-<!-- HERO -->
-<section id="top" class="hero-wrap">
-  <div class="vybe-card reveal">
-    <div class="vybe-sidebar" aria-hidden="true"><span>YERNAR&nbsp;•&nbsp;YERNAR&nbsp;•&nbsp;YERNAR&nbsp;•&nbsp;</span></div>
+<!-- HERO: splash-card -->
+<section id="top" class="splash">
+  <div class="splash-sidenav" aria-hidden="true">
+    <a href="#top">Home</a><a href="#work">Work</a><a href="#evidence">Evidence</a><a href="#press">Press</a>
+  </div>
 
-    <div class="vybe-top">
-      <div class="vybe-icons">
-        <div class="vi"><span class="vi-ico">🔬</span><p>Research<br>Driven</p></div>
-        <div class="vi"><span class="vi-ico">🤖</span><p>Hardware<br>Built</p></div>
-        <div class="vi"><span class="vi-ico">🚀</span><p>Founder<br>Energy</p></div>
-      </div>
-      <div class="vybe-feature">
-        <span class="vf-kicker">Featured build</span>
-        <img src="images/hero-avatar.jpg" alt="Avatar robot">
-        <div class="vf-chip"><strong>Top 0.2%</strong><span>Infomatrix Asia</span></div>
-      </div>
+  <div class="splash-inner reveal">
+    <p class="splash-kicker">⚡ Engineer &nbsp;·&nbsp; Researcher &nbsp;·&nbsp; Builder</p>
+    <h1 class="splash-name">YERNAR<br>MARS</h1>
+    <p class="splash-sub">AI &amp; Hardware Engineer</p>
+
+    <div class="ability-row">
+      <div class="ab"><span>🐍</span><small>Python</small></div>
+      <div class="ab"><span>🔥</span><small>PyTorch</small></div>
+      <div class="ab"><span>📡</span><small>ESP32</small></div>
+      <div class="ab"><span>🛠️</span><small>Fusion 360</small></div>
+      <div class="ab passive"><span>🧠</span><small>ML/CV</small></div>
     </div>
 
-    <h1 class="vybe-h1">OWN THE<br><span class="vybe-accent">BUILD<span class="typing" id="typing"></span></span></h1>
+    <p class="splash-bio">I engineer AI and hardware that remove manual bottlenecks — a low-dose
+    medical-imaging AI mentored by 7 university professors, autonomous robots,
+    and startups that placed at national battles.</p>
 
-    <div class="vybe-bottom">
-      <div class="vybe-lede">
-        <span class="vl-tag">Now building</span>
-        <h2>Where code meets<br>real impact</h2>
-        <p>Low-dose medical AI, autonomous robots, and startups — engineered, not just demoed.</p>
-        <div class="cta">
-          <a class="btn primary" href="cv.pdf" target="_blank">Download CV</a>
-          <a class="btn ghost" href="https://github.com/MartianYernar" target="_blank">GitHub</a>
-        </div>
-      </div>
-      <a class="vybe-cta" href="#work"><span>See work</span><span class="vybe-arrow">↑</span></a>
-      <div class="vybe-proof">
-        <div class="vp-avatars"><span></span><span></span><span></span></div>
-        <p>Mentored by <strong>7 NU professors</strong></p>
-      </div>
+    <div class="cta">
+      <a class="btn primary" href="#work">See work</a>
+      <a class="btn ghost" href="cv.pdf" target="_blank">Download CV</a>
     </div>
+  </div>
+
+  <div class="splash-art" aria-hidden="true">
+    <img src="images/me-avatar-cutout.png" alt="">
+    <div class="badge badge-1">🏆 <strong>Top 0.2%</strong><span>Infomatrix Asia</span></div>
+    <div class="badge badge-2">🎓 <strong>7 Professors</strong><span>Research mentors</span></div>
+  </div>
+</section>
+
+<!-- POPULAR BUILDS: video row -->
+<section class="clips-row">
+  <p class="clips-label">Popular builds</p>
+  <div class="clips-track">
+    <a class="clip" href="https://youtube.com/shorts/JZ4vvyhllSY" target="_blank">
+      <img src="https://img.youtube.com/vi/JZ4vvyhllSY/hqdefault.jpg" alt="Avatar demo" loading="lazy">
+      <span class="clip-play">▶</span><span class="clip-title">Avatar — café pilot</span>
+    </a>
+    <a class="clip" href="https://youtu.be/9v_Go98K5Ps" target="_blank">
+      <img src="https://img.youtube.com/vi/9v_Go98K5Ps/hqdefault.jpg" alt="SmartGarbage demo" loading="lazy">
+      <span class="clip-play">▶</span><span class="clip-title">SmartGarbage — sorting</span>
+    </a>
+    <a class="clip" href="https://youtu.be/PAoEEDkMnFs" target="_blank">
+      <img src="https://img.youtube.com/vi/PAoEEDkMnFs/hqdefault.jpg" alt="SmartGarbage demo 2" loading="lazy">
+      <span class="clip-play">▶</span><span class="clip-title">SmartGarbage — full bin</span>
+    </a>
+    <a class="clip" href="https://youtube.com/shorts/rNgVq9L-jo4" target="_blank">
+      <img src="https://img.youtube.com/vi/rNgVq9L-jo4/hqdefault.jpg" alt="SoilyGet demo" loading="lazy">
+      <span class="clip-play">▶</span><span class="clip-title">SoilyGet — field test</span>
+    </a>
+    <a class="clip" href="https://youtu.be/6rjmJbgraDw" target="_blank">
+      <img src="https://img.youtube.com/vi/6rjmJbgraDw/hqdefault.jpg" alt="HeartCareAI demo" loading="lazy">
+      <span class="clip-play">▶</span><span class="clip-title">HeartCareAI — demo</span>
+    </a>
   </div>
 </section>
 
@@ -81,7 +111,7 @@
       <path d="M130,50 C320,50 320,130 400,130" fill="none" stroke="url(#g1)" stroke-width="2.5"/>
       <path d="M400,130 C480,130 480,50 670,50" fill="none" stroke="url(#g1)" stroke-width="2.5"/>
       <path d="M400,30 L400,230" fill="none" stroke="url(#g1)" stroke-width="2.5"/>
-      <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ef5d4a"/><stop offset="1" stop-color="#1f8a78"/></linearGradient></defs>
+      <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a35cff"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient></defs>
     </svg>
     <div class="spike-node center"><span class="sn-ico">⚡</span><h3>Builder</h3><p>I engineer systems that give people leverage.</p></div>
   </div>

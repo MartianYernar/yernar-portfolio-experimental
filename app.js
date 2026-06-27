@@ -13,24 +13,6 @@ addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.t
 document.addEventListener('mouseover', e => { if (e.target.closest('a,button,.bento-tile,.card')) ring.classList.add('active'); });
 document.addEventListener('mouseout', e => { if (e.target.closest('a,button,.bento-tile,.card')) ring.classList.remove('active'); });
 
-// typing hero tagline
-const roles = ['RESEARCHER.', 'BUILDER.', 'FOUNDER.', 'MENTOR.'];
-const typingEl = document.getElementById('typing');
-let ri = 0, ci = 0, deleting = false;
-function tick() {
-  const word = roles[ri];
-  if (!deleting) {
-    ci++;
-    typingEl.textContent = word.slice(0, ci);
-    if (ci === word.length) { deleting = true; setTimeout(tick, 1400); return; }
-  } else {
-    ci--;
-    typingEl.textContent = word.slice(0, ci);
-    if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
-  }
-  setTimeout(tick, deleting ? 45 : 90);
-}
-tick();
 
 // live GitHub stats
 fetch('https://api.github.com/users/MartianYernar')
